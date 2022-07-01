@@ -10,7 +10,7 @@
 >
 > 热重载 `command + s` 或 `command + \`
 >
-> 热重载 `command + r` 
+> run   `control + r` 
 
 ##### Dart
 
