@@ -1,9 +1,11 @@
 # Flutter 笔记
-- [Android Studio快捷键](#Android Studio快捷键)
+
+- [Android_Studio快捷键](#Android_Studio快捷键)
 - [Dart](#Dart)
 - [UI组建](#UI组建)
+  
+##### Android_Studio快捷键
 
-##### Android Studio快捷键：
 > 格式化代码 `option + command + L`
 >
 > 热重载 `command + s` 或 `command + \`
