@@ -1,9 +1,4 @@
-# Flutter 笔记
 
-- [Android_Studio快捷键](#Android_Studio快捷键)
-- [Dart](#Dart)
-- [UI组建](#UI组建)
-  
 ##### Android_Studio快捷键
 
 > 格式化代码 `option + command + L`
@@ -25,12 +20,6 @@ var gifts = {
   'second':'B',
 };
 ```
-
-#### UI组建
-
-> Widget (小部件)
->
-> 有状态 （Stateful） 无状态 （Stateless）
 
 #### Flutter 常用命令
 
@@ -85,4 +74,10 @@ flutter precache                # 预缓存所有平台的预编译二进制文�
 ```
 
 
+
+#### UI组件记录
+
+> Widget (小部件)
+>
+> 有状态 （Stateful） 无状态 （Stateless）
 
