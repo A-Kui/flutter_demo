@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'pages/dart_variables.dart';
+import 'pages/dart_numbers.dart';
+import 'pages/dart_functions.dart';
+import 'pages/dart_keywords.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'ZK第一个flutter'),
+      home: const MyHomePage(title: 'Flutter Demo'),
     );
   }
 }
@@ -30,13 +34,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  final List<Map<String, dynamic>> menuItems = [
+    {'title': 'Dart定义变量', 'page': const DartVariablesPage()},
+    {'title': 'Dart数字类型', 'page': const DartNumbersPage()},
+    {'title': 'Dart函数', 'page': const DartFunctionsPage()},
+    {'title': 'Dart关键字', 'page': const DartKeywordsPage()},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -45,24 +48,21 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              '我点击了这么多次',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      body: ListView.builder(
+        itemCount: menuItems.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: CircleAvatar(child: Text('${index + 1}')),
+            title: Text(menuItems[index]['title']),
+            trailing: const Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => menuItems[index]['page']),
+              );
+            },
+          );
+        },
       ),
     );
   }
